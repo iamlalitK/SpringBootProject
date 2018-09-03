@@ -1,30 +1,38 @@
 package com.lalitstuff.springbootapi1.topic;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "topics")
 public class Topic {
 
 	@Id
-	private String id;
+	@GeneratedValue
+	@Column(name="id")
+	private int id;
+	@Column(name="name")
 	private String name;
+	@Column(name="description")
 	private String description;
 	
 	public Topic() {
 	}
 		
-	public Topic(String id, String name, String description) {
+	public Topic(int id, String name, String description) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 	}
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

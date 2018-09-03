@@ -23,7 +23,7 @@ public class TopicService {
 		topicRepository.save(topic);
 	}
 
-	public Topic getTopic(String id) {
+	public Topic getTopic(int id) {
 		return topicRepository.findById(id).orElse(null);
 	}
 
@@ -31,7 +31,7 @@ public class TopicService {
 		topicRepository.save(topic);
 	}
 	
-	public void deleteTopic(String id) {
+	public void deleteTopic(int id) {
 		topicRepository.deleteById(id);
 	}
 }

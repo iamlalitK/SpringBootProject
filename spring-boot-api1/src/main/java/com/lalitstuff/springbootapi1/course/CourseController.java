@@ -17,12 +17,12 @@ public class CourseController {
 	@Autowired
 	CourseService courseService;
 	
-	@RequestMapping("/topics/{topicId}/courses")
-	public List<Course> getAllCourses(@PathVariable String topicId){
+	@RequestMapping(method=RequestMethod.GET, value="/topics/{topicId}/courses")
+	public List<Course> getAllCourses(@PathVariable int topicId){
 		return courseService.getAllCourses(topicId);
 	}
 	
-	@RequestMapping("/topics/{topicId}/courses/{id}")
+	@RequestMapping(method=RequestMethod.GET, value="/topics/{topicId}/courses/{id}")
 	public Course getCourse(@PathVariable String id){
 		return courseService.getCourse(id);
 	}
